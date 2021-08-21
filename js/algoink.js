@@ -7,7 +7,7 @@ var inGallery = false;
 var title = "Title";
 var author = "Author";
 var sketch = "";
-const skDir = "/saves/";
+const skDir = "saves/";
 var skDefault = {
 	name: "2ed9f913",
 	sketch: "  startshape c \n \
@@ -417,7 +417,7 @@ function hideTooltip(el){
 function openGallery(){
   var $frame;
   //create an iframe element
-  $frame = $('<iframe id="frame" src="/saves/gallery.html">');
+  $frame = $('<iframe id="frame" src="saves/gallery.html">');
   $frame.addClass($("#swatches").attr("class"));
   //append the iframe to #skCanvas
   //console.log($('#skCanvas').html);

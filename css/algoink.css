@@ -287,7 +287,7 @@ nav .save-ui .permalink {
   display: block;
   text-indent: -9999px;
   overflow: hidden;
-  background: url(/images/sprite-toggle.png) no-repeat 0px 0px;
+  background: url(../images/sprite-toggle.png) no-repeat 0px 0px;
 }
 #controls .toggleLink.collapsed {
   background-position: left bottom;
