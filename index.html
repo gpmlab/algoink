@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Algorithm Ink Playground</title>
+
+    <script charset='utf-8' src='/js/jquery-3.6.0.min.js' type='text/javascript'></script>
+    <script charset='utf-8' src='/js/jstorage.min.js' type='text/javascript'></script>
+    <script charset='utf-8' src='/js/jquery.mapkey.min.js' type='text/javascript'></script>
+    <script charset='utf-8' src='/js/jquery.preload.min.js' type='text/javascript'></script>
+    <script charset='utf-8' src='/js/jszip.min.js' type='text/javascript'></script>
+    <script charset='utf-8' src='/js/FileSaver.min.js' type='text/javascript'></script>
+   
+    
+    <script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <script charset='utf-8' src='/js/algoink.js' type='text/javascript'></script>
+    <link href='/css/algoink.css' media='screen' rel='stylesheet' type='text/css' />
+  </head>
+  <body>
+
+    <!-- Header bar with Navigation Menu -->
+    <header>
+      <h1>
+        <img src="/images/favicon_io/favicon-16x16.png" />
+        <span style="color:greenyellow;">Algorithm</span>Ink <em>&szlig;</em> 
+      </h1>
+      <h1 id='sktitle' style="color:cyan;">
+        &#6158;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#6158;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        "Title" <span style="text-transform: lowercase; color:yellow;">by</span> Author
+      </h1>
+      
+      <nav>
+        <ul>
+           <li class='save' style="display:none;" id='save-id'>
+            <div class='save-ui'>
+              <input class='permalink' size='20' id='skname'/>
+              <a class='save-link' href='#'>Save</a>
+              <span class="tooltip">Save your changes to this link</span>
+            </div>
+          </li>
+          <li class='blink_me' style="display:block;" id='save-status'>
+            <a href="#" >Save Server: OFFLINE!!</a>
+          </li>
+          <li class='new'>
+            <a href="#" class="new-link">Fork</a>
+            <span class="tooltip">Clone/Fork the sketch</span>
+          </li>
+          <li class='open'>
+            <a href="#" class="open-link">Open</a>
+            <span class="tooltip">Open a sketch</span>
+          </li>
+          <li class='refresh'>
+            <a href="#" class="refresh-link">Refresh</a>
+            <span class="tooltip">Refresh the screen</span>
+          </li>
+          <li class='fullscreen'>
+            <a href="#" class="fullscreen-link">Fullscreen</a>
+            <span class="tooltip">View sketch on fullscreen</span>
+          </li>
+          <li class="share">
+            <a href="#" class="share-link">Share</a>
+            <span class="tooltip">Share your sketch on social media</span>
+            <div class="share-content">
+               <a href="javascript:void(0)" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), 'title', 'width=600,height=460');" class="social-button facebook-button"> <i class="fa fa-facebook"></i>Facebook</a>
+               <a href="javascript:void(0)" onclick="window.open('https://twitter.com/share?url=' + encodeURIComponent(window.location.href) + '&' + 'Algo Ink' + '&' + 'hashtags=algoink' + '&' + 'via=tags07', 'Algo Ink, width=600,height=460');" data-title="Title" data-tags="Tags" title="Share on Twitter" class="social-button twitter-button"> <i class="fa fa-twitter"></i>Twitter</a>
+               <a href="javascript:void(0)" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(window.location.href), 'title', 'width=600,height=460');" class="social-button facebook-button" title="Share on LinkedIn">
+                  <i class="fa fa-linkedin"></i>LinkedIn</a>
+                <a href="javascript:void(0)" title="Share via Email" onclick="parent.location='mailto:?subject=AlgoInk&amp;body=' + encodeURIComponent(window.location.href);" class="social-button email-button"> <i class="fa fa-email"></i>Email</a>
+                 
+            </div>
+          </li> 
+          <li class='download'>
+            <a href='#' id='download-link'>Download</a>
+            <span class="tooltip">Download this code as a file</span>
+          </li>
+        </ul>
+      </nav>
+     </header>
+
+
+    <!-- Canvas and Popup for Fork dialog -->
+     <div id='skCanvas'>
+
+        <script src="/js/contextfree.js" type='text/javascript'></script> 
+        <script src="/js/algoink4.js" type='text/javascript'></script> 
+        <div id="canvasContainer" style="width:100%;height:100%;"></div>    
+            <textarea id="sketchId" style="display:none;">
+
+            </textarea>  
+
+        <div id="prompt-form-container" style="display: none;">
+           <h1>Make it your own..Go Fork!!</h1>
+           <form id="prompt-form">
+             <input class="formInput" placeholder="Sketch Name" name="skName" type="text" required />
+             <input class="formInput" placeholder="Sketch Title" name="skTitle" type="text" required />
+             <input class="formInput" placeholder="Author" name="skAuthor" type="text" required />
+             <input class="formBtn" type="submit" value="Ok" />
+             <input class="formBtn" type="button" name="cancel" value="Cancel" />
+           </form>
+        </div>
+
+          <script> var theId = "sketchId";  display( theId ); </script> 
+
+     
+     </div>
+     
+
+      <!-- Left Editor sidebar -->
+      <section id='controls'>
+        <a class='toggleLink' href='#' >
+          &laquo;
+        </a>
+        <div id='sketchbox'>
+          <div class='title-bar'>
+            <h3>
+              SKETCH
+            </h3>
+          </div>
+          <div class='content' id='sketch'>
+          </div>
+        </div>
+      </section>
+
+
+  
+
+  </body>
+</html>
